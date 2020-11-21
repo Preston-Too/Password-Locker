@@ -53,7 +53,7 @@ class Credentials():
     """
     Method to create new credentials
     """
-    credentials_list = []
+    credentials = []
 
     def __init__(self, account, username, password):
         """
@@ -67,7 +67,7 @@ class Credentials():
         """
         method that adds credentials to the list
         """
-        Credentials.credentials_list.append(self)
+        Credentials.credentials.append(self)
 
     @classmethod
     def createCredential(self, account, username, password):
@@ -90,3 +90,11 @@ class Credentials():
 
         else:
             print("Credentials not saved")
+
+    def displayCredential():
+        """
+        methods to display saved credentials
+        """
+        if (len(Credentials.credentials) > 0):
+
+            return Credentials.credentials
