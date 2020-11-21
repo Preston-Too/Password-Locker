@@ -39,3 +39,12 @@ class User:
         method that displays saved users
         """
         return cls.userList
+
+    def deleteUser(self):
+        """
+        method that delete a selected user
+        """
+        User.userList.remove(self)
+
+if __name__ == "__main__":
+    pass
