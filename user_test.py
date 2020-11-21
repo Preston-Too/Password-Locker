@@ -51,6 +51,27 @@ class TestUser(unittest.TestCase):
         self.user.deleteUser()
         self.assertEqual(len(User.userList), 1)
 
+    def test_display_users(self):
+        """
+        method to test if users are correctly displayed
+        """
+        self.assertEqual(User.displayUser(), User.userList)
+
+class TestCredentials(unittest.TestCase):
+    def setUp(self):
+        """
+        define the constructor
+        """
+        self.cred = Credentials("Twitter", "@prestonblazer", "press123")
+
+    def test_init(self):
+        """
+        make sure the credential is well initialized
+        """
+        self.assertEqual(self.cred.account, "Twitter")
+        self.assertEqual(self.cred.username, "@prestonblazer")
+        self.assertEqual(self.cred.password, "press123")
+
 
 if __name__ == "__main__":
     unittest.main()
