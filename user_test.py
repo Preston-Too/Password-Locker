@@ -27,10 +27,29 @@ class TestUser(unittest.TestCase):
         method to test multiple saved users
         '''
         self.user.saveUser()
-        test_user = User("Ron", "12345678")  # new contact
+        test_user = User("Ray", "12345678")  # new contact
         test_user.saveUser()
 
         self.assertEqual(len(User.userList), 2)
+
+    def tearDown(self):
+        '''
+        method to clean up after each test
+        '''
+
+        User.userList = []
+
+    
+    def test_delete_user(self):
+        """
+        method to test delete users
+        """
+        self.user.saveUser()
+        test_user = User("Ray", "12345678")  # new contact
+        test_user.saveUser()
+
+        self.user.deleteUser()
+        self.assertEqual(len(User.userList), 1)
 
 
 if __name__ == "__main__":
