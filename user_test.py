@@ -83,12 +83,22 @@ class TestCredentials(unittest.TestCase):
         test for multiple credentials
         """
         self.cred.saveCredential()
-        test_cred = Credentials("Twitter", "@prestonblazer", "press123")  # new contact
+        test_cred = Credentials("Twitter", "@prestonblazer", "press123") 
         test_cred.saveCredential()
 
         self.assertEqual(len(Credentials.credentials), 2)
 
-    
+    def test_delete(self):
+        """
+        test to delete credentials
+        
+        """
+        self.cred.saveCredential()
+        test_cred = Credentials("Twitter", "@prestonblazer", "press123") 
+        test_cred.saveCredential()
+
+        self.cred.deleteCredential()
+        self.assertEqual(len(Credentials.credentials), 2)
 
 
 if __name__ == "__main__":
