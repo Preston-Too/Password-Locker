@@ -20,3 +20,15 @@ class User:
         """
         newUser = User(username, password)
         return newUser
+
+    def login(self):
+        """
+        method that allows a user to log in after providing credentials
+        """
+        print(" Successfully Logged in")
+
+    def saveUser(self):
+        """
+        method that save user to the list
+        """
+        User.userList.append(self)
