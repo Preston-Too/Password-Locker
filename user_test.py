@@ -72,6 +72,24 @@ class TestCredentials(unittest.TestCase):
         self.assertEqual(self.cred.username, "@prestonblazer")
         self.assertEqual(self.cred.password, "press123")
 
+    def tearDown(parameter_list):
+        """
+        clear up during each test
+        """
+        Credentials.credentials = []
+
+    def test_save_multiples_credential(self):
+        """
+        test for multiple credentials
+        """
+        self.cred.saveCredential()
+        test_cred = Credentials("Twitter", "@prestonblazer", "press123")  # new contact
+        test_cred.saveCredential()
+
+        self.assertEqual(len(Credentials.credentials), 2)
+
+    
+
 
 if __name__ == "__main__":
     unittest.main()
