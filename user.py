@@ -68,3 +68,25 @@ class Credentials():
         method that adds credentials to the list
         """
         Credentials.credentials_list.append(self)
+
+    @classmethod
+    def createCredential(self, account, username, password):
+        """
+        method that creates a new credential
+        """
+        newCredential = Credentials(
+            account, username, password)
+        return newCredential
+
+    def searchCredential(account):
+        """
+        method that searches a new credential
+        """
+        if Credentials.credentials:
+            for credential in Credentials.credentials:
+                if credential.account == account:
+                    return credential
+            print("No such account")
+
+        else:
+            print("Credentials not saved")
