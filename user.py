@@ -98,3 +98,20 @@ class Credentials():
         if (len(Credentials.credentials) > 0):
 
             return Credentials.credentials
+
+    @classmethod
+    def credentialExist(self, accountName):
+        """
+        method that checks if credentials exists
+        """
+
+        if Credentials.credentials:
+            for credential in Credentials.credentials:
+                if credential.accountName == accountName:
+                    return True
+            print("No such account")
+
+        else:
+            print("Not saved")
+
+    
