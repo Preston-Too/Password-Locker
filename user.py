@@ -100,18 +100,25 @@ class Credentials():
             return Credentials.credentials
 
     @classmethod
-    def credentialExist(self, accountName):
+    def credentialExist(self, account):
         """
         method that checks if credentials exists
         """
 
         if Credentials.credentials:
             for credential in Credentials.credentials:
-                if credential.accountName == accountName:
+                if credential.account == account:
                     return True
             print("No such account")
 
         else:
             print("Not saved")
 
-    
+    def deleteCredential(account):
+        """
+        method that deletes credential
+        """
+        for credential in Credentials.credentials:
+            if credential.username == account:
+                Credentials.credentials.remove(credential)
+
