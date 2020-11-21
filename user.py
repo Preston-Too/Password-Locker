@@ -32,3 +32,10 @@ class User:
         method that save user to the list
         """
         User.userList.append(self)
+
+    @classmethod
+    def displayUser(cls):
+        """
+        method that displays saved users
+        """
+        return cls.userList
