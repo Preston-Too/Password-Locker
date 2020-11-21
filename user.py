@@ -48,3 +48,17 @@ class User:
 
 if __name__ == "__main__":
     pass
+
+class Credentials():
+    """
+    Method to create new credentials
+    """
+    credentials_list = []
+
+    def __init__(self, account, username, password):
+        """
+        crede
+        """
+        self.account = account
+        self.username = username
+        self.password = password
