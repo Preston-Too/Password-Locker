@@ -100,6 +100,7 @@ class TestCredentials(unittest.TestCase):
         self.cred.deleteCredential()
         self.assertEqual(len(Credentials.credentials), 2)
 
+  
 
 if __name__ == "__main__":
     unittest.main()
