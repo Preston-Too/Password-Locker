@@ -197,3 +197,84 @@ if __name__ == "__main__":
 
         else:
             print("Invalid shortcode\n")
+
+    while True:
+        print("Want to proceed?\n\n Use these shortcodes to proceed\n 1. sc - Save new Credential \n 2. ds - Display existing Credential\n 3. fc - Find a credential \n 4. dc -  Delete an existing Credential \n 5. ex - Exit")
+
+        shortCode = input().lower()
+
+        if shortCode == 'sc':
+            print("New Credential Account")
+            print("*"*60)
+            print("\n")
+
+            print("Account Name e.g Twitter")
+            account = input()
+
+            print("Account UserName")
+            username = input()
+
+            while True:
+                print(
+                    "1. cp - create own password?\n 2. sgp - System generated passwords")
+
+                PasswordOption = input().lower()
+
+                if PasswordOption == 'cp':
+                    print("Account Password :")
+                    password = input()
+                    break
+                elif PasswordOption == 'sg':
+                    password = Credentials.passwordGenerate()
+                    break
+
+                else:
+                    print("Password Invalid")
+
+            newC = Credentials.createCredential(
+                account, username, password)
+            Credentials.saveCredential(newC)
+            print("\n")
+            print("Your Account Credentials saved!")
+            print("\n")
+
+        elif shortCode == 'ds':
+            if Credentials.displayCredential():
+                print("List of your credentials:\n")
+                for credential in Credentials.credentials:
+                    account = credential.account
+                    accountuser = credential.username
+                    accountpassword = credential.password
+                    print(
+                        f"Account Name : {account}\n Account Username : {accountuser}\n Account Password: {accountpassword}\n")
+
+            else:
+                print("You do not have saved credentials\n")
+
+        elif shortCode == 'fc':
+            print("Account name: ")
+            Account = input()
+            if Credentials.credentialExist(Account):
+                searchAccount = Credentials.searchCredential(Account)
+                print(
+                    f"Account name: {searchAccount.account}\n Account Username: {searchAccount.username}\n Account Password : {searchAccount.password}")
+
+            else:
+                print("No such account name!\n")
+
+        elif shortCode == 'dc':
+            print("delete account?")
+            Account = input()
+            if Credentials.credentialExist(Account):
+                Credentials.deleteCredential(Account)
+                print("Account Successfully deleted")
+
+            else:
+                print("No such account name")
+
+        elif shortCode == 'ex':
+            print("Bye. Nice time")
+            isTrue = False
+
+        else:
+            print("invalid short code")
