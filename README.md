@@ -39,15 +39,14 @@ What the user does...
 ## Behaviour Driven Development
 | Behaviour | Input | Output |
 | :---------------- | :---------------: | ------------------: |
-|Open the application on the terminal | Run the command ```$ ./python3 user.py```|Hello Welcome to your Password Locker...
-* cc --- Create New Account * lg --- Login <br>*
-|Select cc| input username and password.cc----to type your own password,sgp----system generated password| Your account has been created successfully.`|
-|Select lg | Enter your password and username you signed up with| There are choices to help the user in moving from one step to the other|
-|Save new credential in the application  | Enter sc|Enter account,username,password & Choose to enter own password or system generated password|
-|Display all stored credentials |  Enter ds| A list of all credentials that has been stored or You don't have any credentials saved yet|
-|Finf stored credential based on account name  |  Enter fc| Enter the Account you want to search for and returns the account details|
-|Delete credential| Enter dc | Enter the account of the Credentials you want to delete |
-| Exit the application | Enter ex | The application bids you bye and exits |
+|Open the application on the terminal | Run the command ```$ ./user.py```|Hello Welcome to your Password Locker... <br>* cc ---  Create New Account * lg ---  Login |
+|Select  cc| input username and password.cc----to type your own password,sgp----system generated password| Hello ```username```, Your account has been created succesfully! Your password is: ```password```|
+|Select lg  | Enter your password and username you signed up with|  Choices to help you navigate through the application|
+|Save new credential in the application| Enter ```nc```|Enter Account's name, Accounts' username, Account's password<br>choose ```cp``` to enter your password or ```sgp``` for the application to generate a password for you |
+|Display all stored credentials | Enter ```ds```|A list of all credentials that has been stored or ```You don't have any credentials saved``` |
+|Search a stored credential based on account name|Enter ```fc```| Enter the Account Name you want to search for and returns the account details|
+|Delete an existing credential that you don't want |Enter ```dc```|Enter the account name of the Credentials you want to delete and returns true if the account has been deleted and false if the account doesn't exist|
+|Exit the application| Enter ```ex```| The application says bye and exits|
 
 ## Technologies Used
 
