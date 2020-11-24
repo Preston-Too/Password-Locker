@@ -157,16 +157,14 @@ if __name__ == "__main__":
                     password = Credentials.passwordGenerate()
                     break
 
-                else:
-                    print("PasswordOption Invalid")
+            else:
 
-            createUser = User.createUser(username, password)
-            User.saveUser(createUser)
-            print("\n")
-            print(
-                f"Hi {username} You've sucessfully created you account\n")
-            print(f"Your username is {username} and password is {password}\n")
+                print("PasswordOption Invalid")
 
+                createUser = User.createUser(username, password)
+                User.saveUser(createUser)
+                print("\n")
+                
         elif shortCode == 'lg':
             print("*"*60)
             print("Enter your username and password")
@@ -176,6 +174,8 @@ if __name__ == "__main__":
             username = input()
             print("Password")
             password = input()
+            print(f"Hi {username} You've sucessfully created you account\n")
+            print(f"Your username is {username} and password is {password}\n")
 
             for user in User.userList:
                 if username == user.username:
@@ -224,7 +224,7 @@ if __name__ == "__main__":
                     print("Account Password :")
                     password = input()
                     break
-                elif PasswordOption == 'sg':
+                elif PasswordOption == 'sgp':
                     password = Credentials.passwordGenerate()
                     break
 
